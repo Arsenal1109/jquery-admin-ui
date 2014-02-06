@@ -91,15 +91,21 @@
 					{
 						breakpoint: 768, 
 						action: function() {
-							
+
 						}
 					},
 				]
 			}, options),
 
 			init: function() {
+				breakpoints = this.options.breakpoints;
+
+				for(var i = 0; i < breakpoints.length; i++) {
+					console.log(breakpoints[i].breakpoint);
+				}
+
 				$(window).resize(function() {
-					console.log(this.options[0]);
+					
 				});			
 			}
 		};
