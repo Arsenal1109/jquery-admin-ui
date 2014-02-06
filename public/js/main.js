@@ -83,13 +83,37 @@
 
 	};
 
-	$.fixedSidebar({element: '#sidebar ul'}).init()
+	$.makeResponsive = function(options) {
+		var mr = {
+			options: $.extend({
+				// 'breakpoints': [768, 992, 1200],
+				'breakpoints': [
+					{
+						breakpoint: 768, 
+						action: function() {
+							
+						}
+					},
+				]
+			}, options),
 
+			init: function() {
+				$(window).resize(function() {
+					console.log(this.options[0]);
+				});			
+			}
+		};
+
+		mr.init();
+	}
+
+	$.fixedSidebar({element: '#sidebar ul'}).init()
 	$.marginOffset({
 		element: '.main_container',
 		hElement: '#sidebar', 
 		vElement: '.header_container'
 	});
+	$.makeResponsive({test: ''});
 
 	// $(document).ready(function() {
 	// 	//Config
