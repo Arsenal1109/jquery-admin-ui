@@ -1,0 +1,184 @@
+@dark_gray: hsl(0%, 0%, 19%);
+@panther_color: #F05437;
+
+.vertical_shadow {
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow:    0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+	box-shadow:         0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+}
+
+
+.strip_padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.title_font {
+	@carme: 'Carme', sans-serif;
+	font-size: 24px;
+}
+
+.dark_gray_text {
+	background: @dark_gray;
+	color:#fff;
+}
+
+body, html {
+	height: 100%;
+	background: #F1EDEA;
+}
+
+.app_container {
+	height: 100%;
+
+	> div {
+		height: 100%;
+	}
+
+	.container  {
+		height: 100%;
+
+
+		> .row.body {
+
+			height: 100%;
+
+			> div:first-child {
+
+				height: 100%;
+
+				#sidebar {
+
+					height: 100%;
+
+				} 
+
+			}
+		}
+	}
+}
+
+.full_height {
+	height: 100%;
+}
+
+.container.full {
+	width:100%;	
+}
+
+.sidebar_container {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	.header_container {
+		position: fixed;
+		width: 100%;
+		z-index: 5;
+	}
+
+
+	.sidebar_container {
+		position: fixed;
+		z-index: 5;
+		display: block;
+	}
+}
+
+// .main_container {
+// 	margin-top: 74px;
+// 	margin-left:320px;
+// }
+
+#sidebar {
+	margin-top: 74px;
+
+	.dark_gray_text;
+
+	ul {
+		float: left;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		li {
+			padding: 20px;
+			position: relative;
+			list-style: none;
+			border-bottom: 1px solid lighten(@dark_gray, 10%);
+			cursor: pointer;
+			a {
+				color:#fff;
+				z-index:5;
+				position: relative;
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+
+			.pusher {
+				height: 100%;
+				background: lighten(@dark_gray, 3%);
+				position: absolute;
+				left:0;
+				top:0;
+				z-index:1;
+			}
+		}
+
+		li:first-child {
+			border-top: 1px solid lighten(@dark_gray, 10%);
+		}
+	}
+}
+
+#search {
+	background: #fff;
+	padding: 20px;
+	.title_font;
+	color: lighten(@dark_gray, 50%);
+	.vertical_shadow;
+}
+
+.logo {
+	padding: 20px;
+	color:#FFF;
+	background: @panther_color;
+	.title_font;
+	.vertical_shadow;
+}
+
+.product {
+	background: #fff;
+	padding: 20px;
+	margin-top: 20px;
+	border-bottom: 1px solid @panther_color;
+
+	img {
+		margin: 0 auto;
+		@media (min-width:1200px) {
+			width: 100%;	
+		}
+	}
+
+	h3 {
+		margin: 0;
+		margin-top: 10px;
+	}
+
+	.edit {
+		float: right;
+		border: 0;
+		padding: 10px 20px 10px 20px;
+		color:#fff;
+		background: @panther_color;
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left:0;
+	background: url(../images/trans.png)
+}

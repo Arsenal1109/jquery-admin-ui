@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Foundation</title>
+
+		<!--Fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
+
+		<!--CSS-->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!--Library/Framework JS-->
+		<script src="bower_components/jQuery/dist/jquery.js"></script>
+	</head>
+
+	<body>
+		<div class="app_container" data-ng-app="pantherApp">
+			<div ui-view class="view-frame" data-view-frame>
+				<div class="container full">
+					<div class="row header_container clearfix" ui-view="header">
+						<div class="col-lg-2 col-md-3 strip_padding">
+							<div class="logo">
+								Panther Admin
+							</div>
+						</div>
+
+						<div class="col-lg-10 col-md-9 strip_padding">
+							<div id="search">Search...</div>
+						</div>
+					</div>
+
+					<div class="row body">
+						<div class="col-lg-2 col-md-3 strip_padding sidebar_container">
+							<div ui-view="sidebar" id="sidebar" data-sidebar>
+								<ul>
+									<li><a>Orders</a></li>
+									<li><a>Products</a></li>
+									<li><a>Customers</a></li>
+									<li><a>Data</a></li>
+									<li><a>Categories</a></li>
+									<li><a>Settings</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-10 col-md-9 main_container" data-main>
+							<div ui-view="main" id="main">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="product">
+											<div class="row">
+												<div class="col-xs-10">
+													<h3>Fully Rad T-Shirt</h3>
+												</div>
+												<div class="col-xs-2">
+													<button class="edit" data-target="edit" data-product-id="1">Edit</button>
+												</div>
+											</div>
+
+											<hr>
+
+											<div class="row">
+												<div class="col-lg-4 col-md-4">
+													<img src="images/sample1.jpg">
+												</div>
+
+												<div class="col-lg-8 col-md-8">
+													<div class="row">
+														<div class="col-md-12">
+															<h4>Product Snapshot</h4>
+															<p><strong>Price:</strong> $14.99</p>
+															<p><strong>Short Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis leo vel lorem sodales venenatis. Donec nunc justo, porta eget commodo in, volutpat at augue. Donec pharetra purus fringilla dolor facilisis lobortis. Etiam sagittis metus sed mattis facilisis. </p>
+															<p><strong>Sales:</strong> 72</p>
+															<p><strong>Likes:</strong> 432</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="product">
+											<div class="row">
+												<div class="col-xs-10">
+													<h3>Fully Rad T-Shirt</h3>
+												</div>
+												<div class="col-xs-2">
+													<button class="edit" data-target="edit" data-product-id="2">Edit</button>
+												</div>
+											</div>
+
+											<hr>
+
+											<div class="row">
+												<div class="col-lg-4 col-md-4">
+													<img src="images/sample1.jpg">
+												</div>
+
+												<div class="col-lg-8 col-md-8">
+													<div class="row">
+														<div class="col-md-12">
+															<h4>Product Snapshot</h4>
+															<p><strong>Price:</strong> $14.99</p>
+															<p><strong>Short Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis leo vel lorem sodales venenatis. Donec nunc justo, porta eget commodo in, volutpat at augue. Donec pharetra purus fringilla dolor facilisis lobortis. Etiam sagittis metus sed mattis facilisis. </p>
+															<p><strong>Sales:</strong> 72</p>
+															<p><strong>Likes:</strong> 432</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
