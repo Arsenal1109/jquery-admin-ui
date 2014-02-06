@@ -42,19 +42,54 @@
 
 		var mo = {
 			options: $.extend({
+				'element': null,
 				'hElement': null,
 				'vElement': null
 			}, options),
-		};
 
-		return {
-			
-		}		
+			element: function() {
+				return $(options.element);
+			},
+			hElement: function() {
+				return $(options.hElement);	
+			},
+			vElement: function() {
+				return $(options.vElement);
+			},
+
+			getHOffset: function() {
+				return this.hElement().width();
+			},
+
+			getVOffset: function() {
+				return this.vElement().height();
+			},
+
+			setOffset: function() {
+				that = this;
+				this.element().css({
+					marginLeft: function() {
+						return that.getHOffset() 
+					},
+					marginTop: function() {
+						return that.getVOffset();
+					}
+				})
+			}
+
+		}
+
+		mo.setOffset();
 
 	};
 
 	$.fixedSidebar({element: '#sidebar ul'}).init()
-	$.marginOffset({hElement: 'lel'});
+
+	$.marginOffset({
+		element: '.main_container',
+		hElement: '#sidebar', 
+		vElement: '.header_container'
+	});
 
 	// $(document).ready(function() {
 	// 	//Config
